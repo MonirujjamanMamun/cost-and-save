@@ -21,28 +21,30 @@
 
     </header>
     <main>
-
+        <h1 class="text-center my-5">Money Master</h1>
         <div class="container">
-            <h1 class="text-center my-5">Money Master</h1>
-            <div class="row row-cols-md-2 row-cols-lg-2">
+
+            <div class="row">
+
                 <!-- left img part  -->
-                <div class="col-6 bg-color rounded">
-                    <img class="h-100 img-fluid" src="img/count.jpg" alt="">
+                <div class="col-lg-6 bg-color rounded">
+                    <img class="h-100 img-fluid img-thumbnail" src="img/money.jpg" alt="">
                 </div>
 
                 <!-- right part  -->
 
-                <div class="col-5 text-center bg-color ms-1 rounded">
+                <div class="col-lg-6 text-center bg-color rounded">
                     <div>
-                        <h3 class="text-center">Income</h3>
-                        <p class="fw-bold">Income: <input id="income-input" name="" type="text" /></p>
+                        <h3 class="text-center my-3">Income</h3>
+
+                        <p class="fw-bold">Income: <input class="border-1" id="income-input" name="" type="text" /></p>
                     </div>
 
                     <div>
                         <h3 class="text-center">Expenses</h3>
-                        <p class="ms-3 fw-bold">Food: <input id="food-input" name="" type="text" /></p>
-                        <p class="ms-3 fw-bold">Rent: <input id="rent-input" name="" type="text" /></p>
-                        <p class="fw-bold">Clothes: <input id="clothes-input" name="" type="text" /></p>
+                        <p class="ms-3 fw-bold">Food: <input class="border-1" id="food-input" name="" type="text" /></p>
+                        <p class="ms-3 fw-bold">Rent: <input class="border-1" id="rent-input" name="" type="text" /></p>
+                        <p class="fw-bold">Clothes: <input class="border-1" id="clothes-input" name="" type="text" /></p>
                     </div>
 
                     <button id="expenses-btn" type="button" class="btn btn-primary btn-lg">Calculate</button>
@@ -53,7 +55,7 @@
                     <!-- saving prat  -->
 
                     <div>
-                        <p class="fw-bold">Save: <input class="w-25" id="saving-input" name="" type="text" /> <span>%</span> <button id="save-btn" type="button" class="btn btn-primary">Calculate</button></p>
+                        <p class="fw-bold">Save: <input class="w-25 border-1" id="saving-input" name="" type="text" /> <span>%</span> <button id="save-btn" type="button" class="btn btn-primary">Calculate</button></p>
                         <h4 class="my-2 text-center">Saving Amount: <span id="saving-amount">000</span></h4>
                         <h4 class="mb-4 text-center">Remaining Balance: <span id="remaining-balance">000</span></h4>
                     </div>
