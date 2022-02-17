@@ -27,14 +27,16 @@ document.getElementById('expenses-btn').addEventListener('click', function() {
 
     // clothes
     const clotheNumber = convert('clothes-input');
+    // error Messes 
+    const errorMsses = document.getElementById('error-msses');
 
     // validation 
-
     if (incomeNumber < 0 || foodNumber < 0 || rentNumber < 0 || clotheNumber < 0) {
-        console.log('Please, give correct number.')
+
+        errorMsses.style.display = 'block'
 
     } else if (isNaN(incomeNumber) || isNaN(foodNumber) || isNaN(rentNumber) || isNaN(clotheNumber)) {
-        console.log('It is not a number.')
+        errorMsses.style.display = 'block'
 
     } else {
 
@@ -44,11 +46,23 @@ document.getElementById('expenses-btn').addEventListener('click', function() {
         // total expenses update 
         changeText('total-expense', expenseTotal)
 
-        // total balance 
-        const balanceTotal = incomeNumber - expenseTotal;
+        const errorMsses3 = document.getElementById('error-msses3');
+        if (incomeNumber < expenseTotal) {
 
-        // total balance update
-        changeText('total-balance', balanceTotal)
+            errorMsses3.style.display = 'block'
+        } else {
+            // total balance 
+            const balanceTotal = incomeNumber - expenseTotal;
+            // total balance update
+            changeText('total-balance', balanceTotal);
+            errorMsses3.style.display = 'none'
+        }
+
+
+
+
+
+        errorMsses.style.display = 'none'
 
     }
 
@@ -58,12 +72,13 @@ document.getElementById('save-btn').addEventListener('click', function() {
 
     const mainBalance = convert('income-input');
     const saveInput = convert('saving-input');
-
+    const errorMsses2 = document.getElementById('error-msses2');
+    // validation 
     if (saveInput < 0) {
-        console.log('Please, give correct number.')
+        errorMsses2.style.display = 'block'
 
     } else if (isNaN(saveInput)) {
-        console.log('It is not a number.')
+        errorMsses2.style.display = 'block'
     } else {
 
         // parcentense calculation
@@ -79,5 +94,7 @@ document.getElementById('save-btn').addEventListener('click', function() {
 
         // remaining Balance update 
         changeText('remaining-balance', remainingBalance)
+
+        errorMsses2.style.display = 'none'
     }
 })

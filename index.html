@@ -45,20 +45,30 @@
                         <p class="ms-3 fw-bold">Food: <input class="border-1" id="food-input" name="" type="text" /></p>
                         <p class="ms-3 fw-bold">Rent: <input class="border-1" id="rent-input" name="" type="text" /></p>
                         <p class="fw-bold">Clothes: <input class="border-1" id="clothes-input" name="" type="text" /></p>
+
                     </div>
 
-                    <button id="expenses-btn" type="button" class="btn btn-primary btn-lg">Calculate</button>
+                    <p id="error-msses" class="error-ms"> *Please give a valid number*.</p>
 
-                    <h4 class="my-1 text-center">Total Expenses : <span id="total-expense">000</span></h4>
+                    <button id="expenses-btn" type="button" class="btn btn-primary btn-lg ms-5">Calculate</button>
+
+                    <h4 class="my-3 text-center">Total Expenses : <span id="total-expense">000</span></h4>
+                    <p id="error-msses3" class="error-ms"> *Your expenses exceed your income*.</p>
                     <h4 class="my-4 text-center">Balance: <span id="total-balance">000</span></h4>
 
                     <!-- saving prat  -->
 
                     <div>
                         <p class="fw-bold">Save: <input class="w-25 border-1" id="saving-input" name="" type="text" /> <span>%</span> <button id="save-btn" type="button" class="btn btn-primary">Calculate</button></p>
+
+                        <p id="error-msses2" class="error-ms"> *Please give a valid number*.</p>
+
                         <h4 class="my-2 text-center">Saving Amount: <span id="saving-amount">000</span></h4>
                         <h4 class="mb-4 text-center">Remaining Balance: <span id="remaining-balance">000</span></h4>
                     </div>
+
+
+
 
                 </div>
             </div>

@@ -1,3 +1,9 @@
 .bg-color {
     background-color: hsl(0, 11%, 98%);
 }
+
+.error-ms {
+    display: none;
+    color: red;
+    font-weight: bolder;
+}
