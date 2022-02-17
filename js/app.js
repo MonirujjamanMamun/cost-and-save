@@ -2,15 +2,16 @@ function convert(id) {
     const input = document.getElementById(id);
     const inputValue = input.value;
     const inputNumber = parseFloat(inputValue);
-
     return inputNumber;
 }
+
 
 function changeText(id, str) {
     const input = document.getElementById(id);
     const value = input.innerText = str;
     return value;
 }
+
 
 document.getElementById('expenses-btn').addEventListener('click', function() {
     // income 
@@ -23,6 +24,7 @@ document.getElementById('expenses-btn').addEventListener('click', function() {
     const clotheNumber = convert('clothes-input');
     // error Messes 
     const errorMsses = document.getElementById('error-msses');
+
     // validation 
     if (incomeNumber < 0 || foodNumber < 0 || rentNumber < 0 || clotheNumber < 0) {
         errorMsses.style.display = 'block'
@@ -52,8 +54,10 @@ document.getElementById('expenses-btn').addEventListener('click', function() {
 
 document.getElementById('save-btn').addEventListener('click', function() {
     const balance = document.getElementById('total-balance');
+
     const currentBalance = balance.innerText;
     const currentNumbers = parseFloat(currentBalance)
+
     const mainBalance = convert('income-input');
     const saveInput = convert('saving-input');
     const errorMsses2 = document.getElementById('error-msses2');
