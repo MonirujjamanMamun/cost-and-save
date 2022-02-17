@@ -51,27 +51,36 @@ document.getElementById('expenses-btn').addEventListener('click', function() {
 })
 
 document.getElementById('save-btn').addEventListener('click', function() {
-
+    const balance = document.getElementById('total-balance');
+    const currentBalance = balance.innerText;
+    const currentNumbers = parseFloat(currentBalance)
     const mainBalance = convert('income-input');
     const saveInput = convert('saving-input');
     const errorMsses2 = document.getElementById('error-msses2');
+    const errorMsses4 = document.getElementById('error-msses4');
     // validation 
     if (saveInput < 0) {
         errorMsses2.style.display = 'block'
     } else if (isNaN(saveInput)) {
         errorMsses2.style.display = 'block'
     } else {
+
         // parcentense calculation
         const savingMoney = (mainBalance * saveInput) / 100;
-        // saving Amount update
-        changeText('saving-amount', savingMoney)
 
-        const balance = document.getElementById('total-balance');
-        const currentBalance = balance.innerText;
-        const remainingBalance = currentBalance - savingMoney;
+        if (currentNumbers < savingMoney) {
+            errorMsses4.style.display = 'block'
+        } else {
+            // saving Amount update
+            changeText('saving-amount', savingMoney)
 
-        // remaining Balance update 
-        changeText('remaining-balance', remainingBalance)
+            const remainingBalance = currentBalance - savingMoney;
+
+            // remaining Balance update 
+            changeText('remaining-balance', remainingBalance)
+            errorMsses4.style.display = 'none'
+        }
+
 
         errorMsses2.style.display = 'none'
     }
